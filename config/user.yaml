@@ -1,0 +1,21 @@
+doodle_url:  https://doodle.com/api/v2.0
+poll_id: fewd773myuuibp9k #28536ay8u7qd86h9
+login: olevasseur@sodifrance.fr
+password: toto
+day: Jeudi
+users:
+    olivier:
+        id: 640579684
+        firstName: Olivier
+        lastName: Levasseur
+        postalAddress: Sodifrance
+        email: olevasseur@sodifrance.fr
+    paul:
+        firstName: paul
+        lastName: Levasseur
+        postalAddress: Sodifrance
+        email: olevasttseur@sodifrance.fr    
+
+
+
+#        curl 'https://doodle.com/api/v2.0/polls/28536ay8u7qd86h9/participants' -H 'sec-fetch-mode: cors' -H 'origin: https://doodle.com' -H 'accept-encoding: gzip, deflate, br' -H 'accept-language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,da;q=0.6' -H 'x-requested-with: XMLHttpRequest' -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36' -H 'content-type: application/json' -H 'accept: application/json, text/javascript, */*; q=0.01' -H 'referer: https://doodle.com/poll/28536ay8u7qd86h9/confirmation' -H 'authority: doodle.com' -H 'sec-fetch-site: same-origin' --data-binary $'{"name":"prénom nom","preferences":[0,0,0,1,0,0],"firstName":"prénom","lastName":"nom","postalAddress":"mon adresse","email":"monemail","optionsHash":"d56d7527e9860b1b0cfa20ca42430f29","participantKey":null}' --compressed
