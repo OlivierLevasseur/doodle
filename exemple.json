@@ -1,0 +1,20 @@
+{
+    "id": "fewd773myuuibp9k",
+    "adminKey": "9hcpa88d",
+    "latestChange": 1576422675883,
+    "initiated": 1575989984725,
+    "participantsCount": 1,
+    "inviteesCount": 0,
+    "type": "DATE",
+    "preferencesType": "YESNO",
+    "state": "OPEN",
+    "locale": "en",
+    "title": "Test",
+    "options": [
+    ],
+    "invitees": [],
+    "amINotified": true,
+    "device": "WEB",
+    "calendarEvents": [],
+    "levels": "YESNO"
+}
