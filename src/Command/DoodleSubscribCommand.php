@@ -100,7 +100,7 @@ class DoodleSubscribCommand extends Command
         $value = Yaml::parseFile($this->path);
         $poll = self::getInfoFromPoll($value['doodle_url'],$value['poll_id']);
         $io->title("Doodle ".$poll->getTitle());
-        $test = new DateTime('2019-12-17');
+        $test = new DateTime('2019-12-15');
         dump($test);
         dump($poll->isAvailable($test));
         /*foreach($value["uses"] as $user){

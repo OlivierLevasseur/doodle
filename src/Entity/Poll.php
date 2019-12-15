@@ -65,7 +65,7 @@ class Poll{
     /**
      * @Type("array<App\Entity\Option>")
      */
-    //private $options;
+    private $options;
 
     public function getId(): string{
         return $this->id;
@@ -115,13 +115,15 @@ class Poll{
         return $this->options;
     }
 
+    /**
+     * find if any Option that has the same day is available
+     */
     public function isAvailable(DateTime $date): bool{
         return false === empty(array_filter(array_map(
             function(Option $option) use ($date){
-                dump($option,$date);
                 $diff = $date->diff($option->getDate());
-                return $diff->days === false;
+                return $diff->days === 0 && $option->isAvailable();
             },$this->getOptions()
-            )));
+        )));
     }
 }

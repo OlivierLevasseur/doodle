@@ -6,14 +6,13 @@ use DateTime;
 use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
+use JMS\Serializer\JsonDeserializationVisitor;
 use JMS\Serializer\JsonSerializationVisitor;
 
 class DateTimeHandler implements SubscribingHandlerInterface{
 
     public static function getSubscribingMethods()
     {
-        dump("ok");
-        die;
         return array(
             array(
                 'direction'=>GraphNavigator::DIRECTION_SERIALIZATION,
@@ -31,10 +30,12 @@ class DateTimeHandler implements SubscribingHandlerInterface{
     }
 
     public function serializeDateTimeToJson(JsonSerializationVisitor $visitor,DateTime $date, array $type,Context $context){
-        return $date->getTimestamp();
+        return $date->getTimestamp()*1000;
     }
 
-    public function deserializeDateTimeFromJson(JsonSerializationVisitor $visitor,$dateAsString, array $type,Context $context){
-        return new DateTime();
+    public function deserializeDateTimeFromJson(JsonDeserializationVisitor $visitor,$dateAsString, array $type,Context $context){
+        $date = new DateTime();
+        $date->setTimestamp(floor($dateAsString/1000));
+        return $date;
     }
 }

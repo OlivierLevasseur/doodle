@@ -29,7 +29,7 @@ services:
         arguments:
             $path: '%kernel.project_dir%/config/user.yaml'
 
-    jms_serializer.datetime_handler:
+    app.datetime_handler:
         class: App\Handler\DateTimeHandler
         tags:
-            - { name: jms_serializer.subscribing_handler, priority: 1 }
+            - { name: jms_serializer.handler, type: DateTime, format: json, priority: -1 } 
